@@ -6,16 +6,15 @@ function fizzBuzzRefactor(userInput) {
     $("body").append("Please enter a valid number.");
   }
   for (i = 1; i <= number; i++) {
-    if ((i % 15 === 0)) {
-      $("body").append("fizzbuzz<br>");
-    } else if (i % 3 === 0) {
-      $("body").append("fizz<br>");
-    } else if (i % 5 === 0) {
-      $("body").append("buzz<br>");
-    } else {
-      $("body").append(i + "<br>");
+    var result = "";
+    if (i % 3 === 0) {
+      result += "fizz";
     }
-  }
+    if (i % 5 === 0) {
+      result += "buzz";
+    }
+    $("body").append((result || i) + "<br>");
+  }100
 }
 
 $(document).load(fizzBuzzRefactor());
